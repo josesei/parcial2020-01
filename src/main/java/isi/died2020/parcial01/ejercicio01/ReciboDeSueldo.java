@@ -25,7 +25,7 @@ public class ReciboDeSueldo {
 	}
 	
 	public double getTotalPago() {
-		return this.getTotalPago();
+		return this.totalPago;
 	}
 
 }

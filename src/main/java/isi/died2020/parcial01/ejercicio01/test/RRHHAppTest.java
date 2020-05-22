@@ -62,7 +62,7 @@ public class RRHHAppTest {
 	@Test
 	public void test() {
 		List<ReciboDeSueldo> recibos = RRHHApp.liquidar(empleados, LocalDate.now().getMonth());
-		assertEquals(500 + 250 + 100 + 200 + 0.15*1010 , recibos.get(1).getTotalPago(), 0);
+		assertEquals(500 + 250 + 100 + 1000 + 0.15*1010 , recibos.get(0).getTotalPago(), 0);
 		
 	}
 

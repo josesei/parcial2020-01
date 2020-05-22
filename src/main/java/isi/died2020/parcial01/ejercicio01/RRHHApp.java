@@ -24,10 +24,10 @@ public class RRHHApp {
 				double bonificacion = 0;
 				if(mes == e.getFechaIngreso().getMonth()) {
 				bonificacion =  e.getSueldoBasico() * 0.5;
-				}
-				
+				}				
 				return new ReciboDeSueldo(ReciboDeSueldo.obtenerNumeroParaAsignar(), mes, sueldo + bonificacion , e);
 				})
+			.limit(listaEmpleados.size())
 			.collect(Collectors.toList());
 		return recibosDeSueldo;
 	}
