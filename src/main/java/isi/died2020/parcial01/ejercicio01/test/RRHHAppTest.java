@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import isi.died2020.parcial01.ejercicio01.Empleado;
@@ -20,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 import java.time.LocalDate;
 
 public class RRHHAppTest {
-	private List<Empleado> empleados;
+	public List<Empleado> empleados = null;
 
 	@Before
 	public void setUp() {
@@ -52,17 +53,16 @@ public class RRHHAppTest {
 		
 		Operario operario = new Operario(1,"roberto", "maidana", 1000, viajantes);
 		
-		List<Empleado> empleados = new ArrayList<Empleado>();
-		empleados.addAll(viajantes);
-		empleados.add(operario);
+		this.empleados = new ArrayList<Empleado>();
+		this.empleados.addAll(viajantes);
+		this.empleados.add(operario);
 		
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void test() {
 		List<ReciboDeSueldo> recibos = RRHHApp.liquidar(empleados, LocalDate.now().getMonth());
-		assertEquals(500 + 250 + 100 + 0.15*100 , recibos.get(1).getTotalPago(), 0);
+		assertEquals(500 + 250 + 100 + 200 + 0.15*1010 , recibos.get(1).getTotalPago(), 0);
 		
 	}
 

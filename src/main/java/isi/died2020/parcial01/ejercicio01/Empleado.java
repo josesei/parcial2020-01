@@ -16,7 +16,7 @@ public abstract class Empleado {
 	
 	protected abstract double calcularSueldo(Month month);
 	
-	LocalDate getFechaIngreso() {
+	public LocalDate getFechaIngreso() {
 		return this.fechaIngreso;
 	}
 
@@ -27,6 +27,10 @@ public abstract class Empleado {
 		this.apellido=apellido;
 		this.sueldoBasico=sueldoBasico;
 		this.fechaIngreso=LocalDate.now();
+	}
+	
+	public double getSueldoBasico() {
+		return this.sueldoBasico;
 	}
 
 }
