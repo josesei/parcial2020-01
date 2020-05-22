@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import isi.died2020.parcial01.ejercicio02.dominio.Alumno;
+import isi.died2020.parcial01.ejercicio02.dominio.AlumnoYaInscriptoException;
 import isi.died2020.parcial01.ejercicio02.dominio.Docente;
 import isi.died2020.parcial01.ejercicio02.dominio.Materia;
+import isi.died2020.parcial01.ejercicio02.dominio.NoSePudoGuardarException;
 
 public class App {
 
@@ -88,8 +90,14 @@ public class App {
 		sistema.registrarAlumnos(a15);
 
 
-		
+		try {
 		sistema.inscribirAlumnoCursada(prof1, a1, m1,2020);
+		}
+		catch(AlumnoYaInscriptoException e1) {
+			System.err.println(e1.getMessage());
+		}catch(NoSePudoGuardarException e2) {
+			System.err.println(e2.getMessage());
+		}
 
 		sistema.inscribirAlumnoExamen(prof1, a1, m1);
 	}

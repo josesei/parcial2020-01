@@ -17,7 +17,7 @@ public class RRHHApp {
 	
 	public static List<ReciboDeSueldo> liquidar (List<Empleado> listaEmpleados, Month mes){
 		return listaEmpleados.stream()
-			.map((e)-> {
+			.map((Empleado e)-> {
 				double sueldo = e.calcularSueldo(mes);
 				double bonificacion = 0;
 				if(mes == e.getFechaIngreso().getMonth()) {
